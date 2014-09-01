@@ -4,8 +4,10 @@ import akka.actor._
 
 object HelloWorldAkkaApplication extends App {
   val system = ActorSystem("myfirstApp")
-  val myFirstActor: ActorRef = system.actorOf(Props[MyFirstActor])
+  val myFirstActor = system.actorOf(Props[MyFirstActor])
+  
   myFirstActor ! "Hello World"
+  
   myFirstActor.!("Hello World")
 }
 
