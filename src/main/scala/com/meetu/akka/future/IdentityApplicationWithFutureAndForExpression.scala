@@ -1,9 +1,10 @@
-package com.meetu.future
+package com.meetu.akka.future
 
 import scala.concurrent.{ ExecutionContext, Future }
 import java.util.concurrent.Executors
 
-object ComposingFutureWithForExpressionApplication {
+object IdentityApplicationWithFutureAndForExpression extends App {
+  val startTime = System.currentTimeMillis()
   val executorService = Executors.newCachedThreadPool()
   implicit val executionContextExecutor = ExecutionContext.fromExecutorService(executorService)
 
@@ -16,6 +17,12 @@ object ComposingFutureWithForExpressionApplication {
     result2 <- future2
     result3 <- future3
   } yield result1 + result2 + result3
+
+  composedFuture onSuccess {
+    case sum =>
+      val seconds = (System.currentTimeMillis() - startTime) / 1000
+      println("Sum of 1, 2 and 3 is " + sum + " calculated in " + seconds + " seconds")
+  }
 
   def timeTakingIdentityFunction(number: Int): Int = {
     Thread.sleep(3000) // sleep for three seconds

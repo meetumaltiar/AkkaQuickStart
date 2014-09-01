@@ -1,4 +1,4 @@
-package com.meetu.akka
+package com.meetu.akka.actor
 
 import akka.actor.Actor
 

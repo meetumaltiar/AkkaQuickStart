@@ -1,4 +1,4 @@
-package com.meetu.future
+package com.meetu.akka.future
 
 object SequentialIdentityApplication extends App {
   val startTime = System.currentTimeMillis()

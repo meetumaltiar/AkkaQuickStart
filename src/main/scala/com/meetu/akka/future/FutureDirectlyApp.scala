@@ -1,4 +1,4 @@
-package com.meetu.future
+package com.meetu.akka.future
 
 import java.util.concurrent.ForkJoinPool
 import scala.concurrent._

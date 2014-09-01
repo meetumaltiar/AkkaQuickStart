@@ -1,4 +1,4 @@
-package com.meetu.future
+package com.meetu.akka.future
 
 import scala.concurrent.{ ExecutionContext, Future }
 import java.util.concurrent.Executors
